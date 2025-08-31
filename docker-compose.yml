@@ -1,0 +1,29 @@
+services:
+  ecss.api:
+    image: ${DOCKER_REGISTRY-}ecssapi
+    container_name: ecss.api
+    build:
+      context: .
+      dockerfile: src/Ecss.Api/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+
+  ecss.database:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: ecss.database
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password123
+      - MSSQL_PID=Express
+    volumes:
+      - ./.containers/ecss-db:/var/opt/mssql/data
+    ports:
+      - 14330:1433
+
+  ecss.cache:
+    image: redis:latest
+    container_name: ecss.cache
+    restart: always
+    ports:
+      - 63790:6379
