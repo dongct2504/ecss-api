@@ -1,7 +1,7 @@
 ﻿using Ecss.DataAccess.Data;
-using Ecss.DataAccess.Specifications;
 using Ecss.Domain.Interfaces.Repositories;
 using Ecss.Domain.Interfaces.Specifications;
+using Ecss.Domain.Specifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecss.DataAccess.Repositories;
@@ -87,13 +87,22 @@ public class Repository<T> : IRepository<T> where T : class
         _dbSet.RemoveRange(entities);
     }
 
-    public async Task<IEnumerable<T>> GetAllWithSpecAsync(ISpecification<T> spec, bool asNoTracking = false)
+    public async Task<IEnumerable<T>> GetAllWithSpecAsync(ISpecification<T> spec, bool asNoTracking = false, int? skip = null, int? take = null)
     {
+        IQueryable<T> query = ApplyAsync(spec);
         if (asNoTracking)
         {
-            return await ApplyAsync(spec).AsNoTracking().ToListAsync();
+            query = query.AsNoTracking();
         }
-        return await ApplyAsync(spec).ToListAsync();
+        if (skip.HasValue)
+        {
+            query = query.Skip(skip.Value);
+        }
+        if (take.HasValue)
+        {
+            query = query.Take(take.Value);
+        }
+        return await query.ToListAsync();
     }
 
     public async Task<T?> GetWithSpecAsync(ISpecification<T> spec, bool asNoTracking = false)

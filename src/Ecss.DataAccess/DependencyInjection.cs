@@ -1,7 +1,9 @@
 ﻿using Ecss.DataAccess.Data;
 using Ecss.DataAccess.ExternalServices;
+using Ecss.DataAccess.Repositories;
 using Ecss.DataAccess.UnitOfWorks;
 using Ecss.Domain.Interfaces.ExternalServices;
+using Ecss.Domain.Interfaces.Repositories;
 using Ecss.Domain.Interfaces.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +22,7 @@ public static class DependencyInjection
             options.Configuration = configuration.GetConnectionString("DefaultCachingConnection"));
 
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
