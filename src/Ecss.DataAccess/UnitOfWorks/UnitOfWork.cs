@@ -37,29 +37,24 @@ public class UnitOfWork : IUnitOfWork
 
     public async Task CommitTransactionAsync()
     {
+        if (dbContextTransaction == null)
+        {
+            throw new InvalidOperationException("No transaction started.");
+        }
         try
         {
             await _dbContext.SaveChangesAsync();
-            if (dbContextTransaction != null)
-            {
-                await dbContextTransaction.CommitAsync();
-            }
+            await dbContextTransaction.CommitAsync();
         }
         catch
         {
-            if (dbContextTransaction != null)
-            {
-                await dbContextTransaction.RollbackAsync();
-            }
+            await dbContextTransaction.RollbackAsync();
             throw;
         }
         finally
         {
-            if (dbContextTransaction != null)
-            {
-                await dbContextTransaction.DisposeAsync();
-                dbContextTransaction = null;
-            }
+            await dbContextTransaction.DisposeAsync();
+            dbContextTransaction = null;
         }
     }
 

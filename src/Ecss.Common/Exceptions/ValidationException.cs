@@ -1,6 +1,17 @@
-﻿using Ecss.Common.Errors;
+﻿namespace Ecss.Common.Exceptions;
 
-namespace Ecss.Common.Exceptions;
+public class ValidationError
+{
+    public ValidationError(string propertyName, string errorMessage)
+    {
+        PropertyName = propertyName;
+        ErrorMessage = errorMessage;
+    }
+
+    public string PropertyName { get; }
+    public string ErrorMessage { get; }
+}
+
 
 public class ValidationException : Exception
 {
