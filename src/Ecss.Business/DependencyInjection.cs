@@ -2,7 +2,6 @@
 using Ecss.Business.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-
 namespace Ecss.Business;
 
 public static class DependencyInjection

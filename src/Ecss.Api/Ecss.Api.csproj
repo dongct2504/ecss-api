@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Ecss.Business\Ecss.Business.csproj" />
     <ProjectReference Include="..\Ecss.DataAccess\Ecss.DataAccess.csproj" />
+    <ProjectReference Include="..\Ecss.Domain\Ecss.Domain.csproj" />
   </ItemGroup>
 
 </Project>

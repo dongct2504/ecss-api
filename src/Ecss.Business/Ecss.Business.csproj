@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Ecss.Domain\Ecss.Domain.csproj" />
     <ProjectReference Include="..\Ecss.Common\Ecss.Common.csproj" />
+    <ProjectReference Include="..\Ecss.Domain\Ecss.Domain.csproj" />
   </ItemGroup>
 
 </Project>
