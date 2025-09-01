@@ -1,5 +1,4 @@
 ﻿using Asp.Versioning;
-using Ecss.Common.Errors;
 using Ecss.Common.Exceptions;
 using Ecss.DataAccess.Data;
 using Microsoft.AspNetCore.Authorization;

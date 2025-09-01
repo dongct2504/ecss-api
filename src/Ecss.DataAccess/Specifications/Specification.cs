@@ -1,4 +1,4 @@
-﻿using Ecss.Business.Interfaces.Specifications;
+﻿using Ecss.Domain.Interfaces.Specifications;
 using System.Linq.Expressions;
 
 namespace Ecss.DataAccess.Specifications;

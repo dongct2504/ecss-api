@@ -1,7 +1,7 @@
-﻿using Ecss.Business.Interfaces.Repositories;
-using Ecss.Business.Interfaces.Specifications;
-using Ecss.DataAccess.Data;
+﻿using Ecss.DataAccess.Data;
 using Ecss.DataAccess.Specifications;
+using Ecss.Domain.Interfaces.Repositories;
+using Ecss.Domain.Interfaces.Specifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecss.DataAccess.Repositories;

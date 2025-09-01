@@ -1,4 +1,4 @@
-﻿using Ecss.Business.Interfaces.ExternalServices;
+﻿using Ecss.Domain.Interfaces.ExternalServices;
 using Serilog.Core;
 using Serilog.Events;
 

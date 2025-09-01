@@ -1,8 +1,8 @@
-﻿using Ecss.Business.Interfaces.ExternalServices;
-using Ecss.Business.Interfaces.UnitOfWorks;
-using Ecss.DataAccess.Data;
+﻿using Ecss.DataAccess.Data;
 using Ecss.DataAccess.ExternalServices;
 using Ecss.DataAccess.UnitOfWorks;
+using Ecss.Domain.Interfaces.ExternalServices;
+using Ecss.Domain.Interfaces.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

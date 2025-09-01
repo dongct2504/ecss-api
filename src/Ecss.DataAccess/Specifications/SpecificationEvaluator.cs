@@ -1,4 +1,4 @@
-﻿using Ecss.Business.Interfaces.Specifications;
+﻿using Ecss.Domain.Interfaces.Specifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecss.DataAccess.Specifications;

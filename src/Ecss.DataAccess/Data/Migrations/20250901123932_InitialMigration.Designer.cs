@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecss.DataAccess.Data.Migrations
 {
     [DbContext(typeof(EcssDbContext))]
-    [Migration("20250831144617_InitialMigration")]
+    [Migration("20250901123932_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace Ecss.DataAccess.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.AdminAction", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.AdminAction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,7 +70,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("admin_actions");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Advert", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Advert", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -127,7 +127,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("adverts");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Cart", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Cart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -171,7 +171,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("carts");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.CartItem", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.CartItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -226,7 +226,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("cart_items");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Category", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -272,7 +272,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("categories");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Company", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -331,7 +331,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("companies");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Component", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Component", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -393,7 +393,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("components");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.CreditCard", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.CreditCard", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -452,7 +452,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("credit_cards");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Order", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -525,7 +525,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("orders");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.OrderItem", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -572,7 +572,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("order_items");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Payment", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Payment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -631,7 +631,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("payments");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Product", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -707,7 +707,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("products");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductComponent", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductComponent", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -745,7 +745,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("product_components");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductDesign", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductDesign", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -787,7 +787,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("product_designs");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductDesignOption", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductDesignOption", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -834,7 +834,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("product_design_options");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductSupplier", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductSupplier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -895,7 +895,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("product_suppliers");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductView", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductView", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -933,7 +933,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("product_views");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.SearchLog", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.SearchLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -978,7 +978,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("search_logs");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Supplier", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Supplier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1055,7 +1055,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("suppliers");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Transaction", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Transaction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1101,7 +1101,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("transactions");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.User", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1161,7 +1161,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("users");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.UserProfile", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.UserProfile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1217,9 +1217,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.ToTable("user_profiles");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.AdminAction", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.AdminAction", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.User", "Admin")
+                    b.HasOne("Ecss.Domain.Entities.User", "Admin")
                         .WithMany("AdminActions")
                         .HasForeignKey("AdminId")
                         .HasConstraintName("FK_admin_actions_admin");
@@ -1227,9 +1227,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Admin");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Advert", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Advert", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Company", "Company")
+                    b.HasOne("Ecss.Domain.Entities.Company", "Company")
                         .WithMany("Adverts")
                         .HasForeignKey("CompanyId")
                         .HasConstraintName("FK_adverts_company");
@@ -1237,9 +1237,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Cart", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Cart", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithMany("Carts")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_carts_user");
@@ -1247,15 +1247,15 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.CartItem", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.CartItem", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Cart", "Cart")
+                    b.HasOne("Ecss.Domain.Entities.Cart", "Cart")
                         .WithMany("CartItems")
                         .HasForeignKey("CartId")
                         .IsRequired()
                         .HasConstraintName("FK_cart_items_cart");
 
-                    b.HasOne("Ecss.DataAccess.Entities.Product", "Product")
+                    b.HasOne("Ecss.Domain.Entities.Product", "Product")
                         .WithMany("CartItems")
                         .HasForeignKey("ProductId")
                         .IsRequired()
@@ -1266,9 +1266,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Category", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Category", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Category", "Parent")
+                    b.HasOne("Ecss.Domain.Entities.Category", "Parent")
                         .WithMany("InverseParent")
                         .HasForeignKey("ParentId")
                         .HasConstraintName("FK_categories_parent");
@@ -1276,9 +1276,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Parent");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.CreditCard", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.CreditCard", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithMany("CreditCards")
                         .HasForeignKey("UserId")
                         .IsRequired()
@@ -1287,9 +1287,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Order", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Order", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_orders_user");
@@ -1297,15 +1297,15 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.OrderItem", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Order", "Order")
+                    b.HasOne("Ecss.Domain.Entities.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .IsRequired()
                         .HasConstraintName("FK_order_items_order");
 
-                    b.HasOne("Ecss.DataAccess.Entities.Product", "Product")
+                    b.HasOne("Ecss.Domain.Entities.Product", "Product")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .IsRequired()
@@ -1316,15 +1316,15 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Payment", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Payment", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Order", "Order")
+                    b.HasOne("Ecss.Domain.Entities.Order", "Order")
                         .WithMany("Payments")
                         .HasForeignKey("OrderId")
                         .IsRequired()
                         .HasConstraintName("FK_payments_order");
 
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithMany("Payments")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_payments_user");
@@ -1334,9 +1334,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Product", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Category", "Category")
+                    b.HasOne("Ecss.Domain.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .HasConstraintName("FK_products_category");
@@ -1344,15 +1344,15 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductComponent", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductComponent", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Component", "Component")
+                    b.HasOne("Ecss.Domain.Entities.Component", "Component")
                         .WithMany("ProductComponents")
                         .HasForeignKey("ComponentId")
                         .IsRequired()
                         .HasConstraintName("FK_pc_component");
 
-                    b.HasOne("Ecss.DataAccess.Entities.Product", "Product")
+                    b.HasOne("Ecss.Domain.Entities.Product", "Product")
                         .WithMany("ProductComponents")
                         .HasForeignKey("ProductId")
                         .IsRequired()
@@ -1363,9 +1363,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductDesign", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductDesign", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Product", "Product")
+                    b.HasOne("Ecss.Domain.Entities.Product", "Product")
                         .WithMany("ProductDesigns")
                         .HasForeignKey("ProductId")
                         .IsRequired()
@@ -1374,15 +1374,15 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductDesignOption", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductDesignOption", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.ProductDesign", "Design")
+                    b.HasOne("Ecss.Domain.Entities.ProductDesign", "Design")
                         .WithMany("ProductDesignOptions")
                         .HasForeignKey("DesignId")
                         .IsRequired()
                         .HasConstraintName("FK_pdo_design");
 
-                    b.HasOne("Ecss.DataAccess.Entities.Component", "LinkedComponent")
+                    b.HasOne("Ecss.Domain.Entities.Component", "LinkedComponent")
                         .WithMany("ProductDesignOptions")
                         .HasForeignKey("LinkedComponentId")
                         .HasConstraintName("FK_pdo_component");
@@ -1392,15 +1392,15 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("LinkedComponent");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductSupplier", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductSupplier", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Product", "Product")
+                    b.HasOne("Ecss.Domain.Entities.Product", "Product")
                         .WithMany("ProductSuppliers")
                         .HasForeignKey("ProductId")
                         .IsRequired()
                         .HasConstraintName("FK_ps_product");
 
-                    b.HasOne("Ecss.DataAccess.Entities.Supplier", "Supplier")
+                    b.HasOne("Ecss.Domain.Entities.Supplier", "Supplier")
                         .WithMany("ProductSuppliers")
                         .HasForeignKey("SupplierId")
                         .IsRequired()
@@ -1411,15 +1411,15 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductView", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductView", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Product", "Product")
+                    b.HasOne("Ecss.Domain.Entities.Product", "Product")
                         .WithMany("ProductViews")
                         .HasForeignKey("ProductId")
                         .IsRequired()
                         .HasConstraintName("FK_product_views_product");
 
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithMany("ProductViews")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_product_views_user");
@@ -1429,9 +1429,9 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.SearchLog", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.SearchLog", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithMany("SearchLogs")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_search_logs_user");
@@ -1439,14 +1439,14 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Transaction", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Transaction", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.Order", "Order")
+                    b.HasOne("Ecss.Domain.Entities.Order", "Order")
                         .WithMany("Transactions")
                         .HasForeignKey("OrderId")
                         .HasConstraintName("FK_transactions_order");
 
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithMany("Transactions")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_transactions_user");
@@ -1456,42 +1456,42 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.UserProfile", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.UserProfile", b =>
                 {
-                    b.HasOne("Ecss.DataAccess.Entities.User", "User")
+                    b.HasOne("Ecss.Domain.Entities.User", "User")
                         .WithOne("UserProfile")
-                        .HasForeignKey("Ecss.DataAccess.Entities.UserProfile", "UserId")
+                        .HasForeignKey("Ecss.Domain.Entities.UserProfile", "UserId")
                         .IsRequired()
                         .HasConstraintName("FK_user_profiles_user");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Cart", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Cart", b =>
                 {
                     b.Navigation("CartItems");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Category", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Category", b =>
                 {
                     b.Navigation("InverseParent");
 
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Company", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Company", b =>
                 {
                     b.Navigation("Adverts");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Component", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Component", b =>
                 {
                     b.Navigation("ProductComponents");
 
                     b.Navigation("ProductDesignOptions");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Order", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Order", b =>
                 {
                     b.Navigation("OrderItems");
 
@@ -1500,7 +1500,7 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("Transactions");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Product", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Product", b =>
                 {
                     b.Navigation("CartItems");
 
@@ -1515,17 +1515,17 @@ namespace Ecss.DataAccess.Data.Migrations
                     b.Navigation("ProductViews");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.ProductDesign", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.ProductDesign", b =>
                 {
                     b.Navigation("ProductDesignOptions");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.Supplier", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.Supplier", b =>
                 {
                     b.Navigation("ProductSuppliers");
                 });
 
-            modelBuilder.Entity("Ecss.DataAccess.Entities.User", b =>
+            modelBuilder.Entity("Ecss.Domain.Entities.User", b =>
                 {
                     b.Navigation("AdminActions");
 

@@ -2,9 +2,9 @@ using Ecss.Api.Conventions;
 using Ecss.Api.Extensions;
 using Ecss.Api.Middleware;
 using Ecss.Business;
-using Ecss.Business.Interfaces.ExternalServices;
 using Ecss.DataAccess;
 using Ecss.DataAccess.ExternalServices;
+using Ecss.Domain.Interfaces.ExternalServices;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
