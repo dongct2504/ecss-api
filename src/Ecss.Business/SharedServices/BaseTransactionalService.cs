@@ -1,4 +1,4 @@
-﻿using Ecss.Business.Interfaces.UnitOfWorks;
+﻿using Ecss.Domain.Interfaces.UnitOfWorks;
 
 namespace Ecss.Business.SharedServices;
 

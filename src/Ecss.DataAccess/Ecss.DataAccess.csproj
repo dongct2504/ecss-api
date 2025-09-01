@@ -7,20 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.19" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.19">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.19" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\AutoGenEntities\" />
+    <ProjectReference Include="..\Ecss.Common\Ecss.Common.csproj" />
+    <ProjectReference Include="..\Ecss.Domain\Ecss.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ecss.Business\Ecss.Business.csproj" />
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

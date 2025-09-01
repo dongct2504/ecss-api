@@ -1,4 +1,4 @@
-﻿using Ecss.Business.Interfaces.ExternalServices;
+﻿using Ecss.Domain.Interfaces.ExternalServices;
 
 namespace Ecss.DataAccess.ExternalServices;
 

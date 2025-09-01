@@ -1,6 +1,6 @@
-﻿using Ecss.Business.Interfaces.Repositories;
-using Ecss.Business.Interfaces.UnitOfWorks;
-using Ecss.DataAccess.Data;
+﻿using Ecss.DataAccess.Data;
+using Ecss.Domain.Interfaces.Repositories;
+using Ecss.Domain.Interfaces.UnitOfWorks;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 

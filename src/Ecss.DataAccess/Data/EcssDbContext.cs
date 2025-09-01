@@ -1,4 +1,6 @@
-﻿using Ecss.DataAccess.Entities;
+﻿using System;
+using System.Collections.Generic;
+using Ecss.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecss.DataAccess.Data;
