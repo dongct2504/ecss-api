@@ -81,5 +81,6 @@ public class UnitOfWork : IUnitOfWork
             dbContextTransaction = null;
         }
         await _dbContext.DisposeAsync();
+        GC.SuppressFinalize(this);
     }
 }
