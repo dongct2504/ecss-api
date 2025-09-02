@@ -6,14 +6,20 @@ using Ecss.DataAccess;
 using Ecss.DataAccess.ExternalServices;
 using Ecss.Domain.Interfaces.ExternalServices;
 using Serilog;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddCors();
-    builder.Services.AddControllers(options =>
-    {
-        options.Conventions.Add(new KebabCaseRouteConvention());
-    });
+    builder.Services
+        .AddControllers(options =>
+        {
+            options.Conventions.Add(new KebabCaseRouteConvention());
+        })
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(System.Text.Json.JsonNamingPolicy.CamelCase));
+        });
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerDocument();
     builder.Services

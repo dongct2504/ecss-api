@@ -28,7 +28,7 @@ public class CategoryService : ICategoryService
 
         int skip = (input.PageNumber - 1) * input.PageSize;
         int take = input.PageSize;
-        IEnumerable<Category> categories = await _unitOfWork.Repository<Category>().GetAllWithSpecAsync(spec, true, skip, take);
+        IEnumerable<Category> categories = await _unitOfWork.Repository<Category>().GetAllWithSpecAsync(spec, true, skip, take, input.SortBy, input.OrderBy);
         int count = await _unitOfWork.Repository<Category>().GetCountAsync();
 
         List<CategoryDto> categoryDtos = _mapper.Map<List<CategoryDto>>(categories);
