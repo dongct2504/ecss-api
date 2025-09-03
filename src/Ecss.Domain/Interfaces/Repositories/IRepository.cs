@@ -1,4 +1,5 @@
-﻿using Ecss.Domain.Interfaces.Specifications;
+﻿using Ecss.Common.Enums;
+using Ecss.Domain.Interfaces.Specifications;
 
 namespace Ecss.Domain.Interfaces.Repositories;
 
@@ -18,6 +19,11 @@ public interface IRepository<T> where T : class
     void Remove(T entity);
     void RemoveRange(IEnumerable<T> entities);
 
-    Task<IEnumerable<T>> GetAllWithSpecAsync(ISpecification<T> spec, bool asNoTracking = false, int? skip = null, int? take = null);
+    Task<IEnumerable<T>> GetAllWithSpecAsync(ISpecification<T> spec,
+        bool asNoTracking = false,
+        int? skip = null,
+        int? take = null,
+        string? sortBy = null,
+        OrderByEnum? orderBy = null);
     Task<T?> GetWithSpecAsync(ISpecification<T> spec, bool asNoTracking = false);
 }

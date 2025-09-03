@@ -20,4 +20,10 @@ public class CategoriesController : ApiController
     {
         return Ok(await _categoryService.GetCategoriesAsync(input));
     }
+
+    [HttpGet]
+    public async Task<IActionResult> GetCategoryById(int id)
+    {
+        return Ok(await _categoryService.GetCategoryByIdAsync(id));
+    }
 }
