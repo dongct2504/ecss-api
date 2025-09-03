@@ -5,6 +5,7 @@ using Ecss.DataAccess.UnitOfWorks;
 using Ecss.Domain.Interfaces.ExternalServices;
 using Ecss.Domain.Interfaces.Repositories;
 using Ecss.Domain.Interfaces.UnitOfWorks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +25,9 @@ public static class DependencyInjection
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+        services.AddLocalization(options => options.ResourcesPath = "ExternalServices/Resources");
+        services.AddScoped<ILocalizationService, LocalizationService>();
 
         return services;
     }

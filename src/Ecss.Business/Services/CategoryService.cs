@@ -2,7 +2,10 @@
 using Ecss.Business.Dtos;
 using Ecss.Business.Dtos.CategoryDtos;
 using Ecss.Business.Interfaces;
+using Ecss.Common.Constants;
+using Ecss.Common.Exceptions;
 using Ecss.Domain.Entities;
+using Ecss.Domain.Interfaces.ExternalServices;
 using Ecss.Domain.Interfaces.UnitOfWorks;
 using Ecss.Domain.Specifications;
 
@@ -11,12 +14,14 @@ namespace Ecss.Business.Services;
 public class CategoryService : ICategoryService
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly ILocalizationService _localization;
     private readonly IMapper _mapper;
 
-    public CategoryService(IUnitOfWork unitOfWork, IMapper mapper)
+    public CategoryService(IUnitOfWork unitOfWork, IMapper mapper, ILocalizationService localization)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _localization = localization;
     }
 
     public async Task<PagedList<CategoryDto>> GetCategoriesAsync(GetCategoriesInput input)
@@ -42,9 +47,15 @@ public class CategoryService : ICategoryService
         };
     }
 
-    public Task<CategoryDto> GetCategoryByIdAsync(int id)
+    public async Task<CategoryDto> GetCategoryByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var spec = new Specification<Category>(c => c.Id == id);
+        Category? category = await _unitOfWork.Repository<Category>().GetWithSpecAsync(spec, true);
+        if (category == null)
+        {
+            throw new NotFoundException(_localization.Get(Messages.CategoryNotFound));
+        }
+        return _mapper.Map<CategoryDto>(category);
     }
 
     public Task<CategoryDto> GetCategoryByNameAsync(string name)

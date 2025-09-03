@@ -43,6 +43,14 @@ var app = builder.Build();
     }
 
     app.UseHttpsRedirection();
+
+    var supportedCultures = new[] { "en", "vi" };
+    var localizationOptions = new RequestLocalizationOptions()
+        .SetDefaultCulture("vi")
+        .AddSupportedCultures(supportedCultures)
+        .AddSupportedUICultures(supportedCultures);
+    app.UseRequestLocalization(localizationOptions);
+
     app.UseSerilogRequestLogging();
     app.UseMiddleware<ExceptionHandlerMiddleware>();
 
