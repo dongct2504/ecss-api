@@ -9,7 +9,7 @@ public interface ICategoryService
     Task<CategoryDto> GetCategoryByIdAsync(int id);
     Task<CategoryDto> GetCategoryByNameAsync(string name);
 
-    Task<CategoryDto> CreateCategoryAsync();
+    Task<CategoryDto> CreateCategoryAsync(CreateCategoryInput input);
     Task<CategoryDto> UpdateCategoryAsync();
     Task<bool> DeleteCategoryAsync();
 }

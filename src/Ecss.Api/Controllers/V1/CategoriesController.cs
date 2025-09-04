@@ -21,9 +21,16 @@ public class CategoriesController : ApiController
         return Ok(await _categoryService.GetCategoriesAsync(input));
     }
 
-    [HttpGet]
+    [HttpGet("{id:int}", Name = "GetCategoryById")]
     public async Task<IActionResult> GetCategoryById(int id)
     {
         return Ok(await _categoryService.GetCategoryByIdAsync(id));
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryInput input)
+    {
+        CategoryDto categoryDto = await _categoryService.CreateCategoryAsync(input);
+        return CreatedAtRoute(nameof(GetCategoryById), new { id = categoryDto.Id }, categoryDto);
     }
 }

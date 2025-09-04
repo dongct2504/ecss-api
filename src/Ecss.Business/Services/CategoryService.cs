@@ -58,14 +58,30 @@ public class CategoryService : ICategoryService
         return _mapper.Map<CategoryDto>(category);
     }
 
-    public Task<CategoryDto> GetCategoryByNameAsync(string name)
+    public async Task<CategoryDto> GetCategoryByNameAsync(string name)
     {
-        throw new NotImplementedException();
+        var spec = new Specification<Category>(c => c.Name == name);
+        Category? category = await _unitOfWork.Repository<Category>().GetWithSpecAsync(spec, true);
+        if (category == null)
+        {
+            throw new NotFoundException(_localization.Get(Messages.CategoryNotFound));
+        }
+        return _mapper.Map<CategoryDto>(category);
     }
 
-    public Task<CategoryDto> CreateCategoryAsync()
+    public async Task<CategoryDto> CreateCategoryAsync(CreateCategoryInput input)
     {
-        throw new NotImplementedException();
+        Category? existCategory = await _unitOfWork.Repository<Category>().GetWithSpecAsync(new Specification<Category>(c => c.Name == input.Name));
+        if (existCategory != null)
+        {
+            throw new ConflictException(_localization.Get(Messages.CategoryConflict));
+        }
+
+        Category category = _mapper.Map<Category>(input);
+        _unitOfWork.Repository<Category>().Add(category);
+        await _unitOfWork.SaveChangesAsync();
+
+        return _mapper.Map<CategoryDto>(category);
     }
 
     public Task<CategoryDto> UpdateCategoryAsync()
